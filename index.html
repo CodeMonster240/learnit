@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnIt - Fun Learning for Kids!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 LearnIt</h1>
+            <p class="tagline">Learn at your own pace - Understanding matters!</p>
+            <div class="mode-toggle">
+                <button id="studentModeBtn" class="mode-btn active">Student Mode</button>
+                <button id="teacherModeBtn" class="mode-btn">Teacher Mode</button>
+            </div>
+        </header>
+
+        <!-- Student Mode -->
+        <div id="studentMode" class="mode-content active">
+            <div id="welcomeScreen" class="screen active">
+                <div class="welcome-card">
+                    <h2>🌟 Welcome to LearnIt!</h2>
+                    <p>Choose a topic to start learning:</p>
+                    <div class="topic-grid">
+                        <button class="topic-btn" data-topic="fractions">
+                            <span class="topic-icon">🍕</span>
+                            <span class="topic-name">Fractions</span>
+                        </button>
+                        <button class="topic-btn" data-topic="addition">
+                            <span class="topic-icon">➕</span>
+                            <span class="topic-name">Addition</span>
+                        </button>
+                        <button class="topic-btn" data-topic="subtraction">
+                            <span class="topic-icon">➖</span>
+                            <span class="topic-name">Subtraction</span>
+                        </button>
+                        <button class="topic-btn" data-topic="multiplication">
+                            <span class="topic-icon">✖️</span>
+                            <span class="topic-name">Multiplication</span>
+                        </button>
+                        <button class="topic-btn" data-topic="division">
+                            <span class="topic-icon">➗</span>
+                            <span class="topic-name">Division</span>
+                        </button>
+                        <button class="topic-btn" data-topic="custom">
+                            <span class="topic-icon">📚</span>
+                            <span class="topic-name">Custom Questions</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="questionScreen" class="screen">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="topic-badge" id="currentTopic"></span>
+                        <span class="question-count" id="questionCount"></span>
+                    </div>
+                    <div class="question-content">
+                        <div id="questionText" class="question-text"></div>
+                        <div id="visualAid" class="visual-aid"></div>
+                    </div>
+                    <div class="answer-section">
+                        <input type="text" id="answerInput" class="answer-input" placeholder="Your answer...">
+                        <button id="submitBtn" class="submit-btn">Check Answer</button>
+                        <button id="hintBtn" class="hint-btn">Need a hint?</button>
+                    </div>
+                    <div id="feedback" class="feedback"></div>
+                    <div id="explanation" class="explanation"></div>
+                    <button id="nextBtn" class="next-btn" style="display: none;">Next Question</button>
+                    <button id="backToTopicsBtn" class="back-btn">Back to Topics</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Mode -->
+        <div id="teacherMode" class="mode-content">
+            <div class="teacher-panel">
+                <h2>👩‍🏫 Create Questions</h2>
+                
+                <div class="question-form">
+                    <div class="form-group">
+                        <label for="questionTopic">Topic/Category:</label>
+                        <select id="questionTopic" class="form-control">
+                            <option value="fractions">Fractions</option>
+                            <option value="addition">Addition</option>
+                            <option value="subtraction">Subtraction</option>
+                            <option value="multiplication">Multiplication</option>
+                            <option value="division">Division</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questionTag">Tags (comma-separated):</label>
+                        <input type="text" id="questionTag" class="form-control" placeholder="e.g., easy, beginner, basic">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questionPrompt">Question:</label>
+                        <textarea id="questionPrompt" class="form-control" rows="3" placeholder="Enter the question..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questionAnswer">Correct Answer:</label>
+                        <input type="text" id="questionAnswer" class="form-control" placeholder="Enter the correct answer...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questionHint">Hint (optional):</label>
+                        <textarea id="questionHint" class="form-control" rows="2" placeholder="Helpful hint for students..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questionExplanation">Explanation:</label>
+                        <textarea id="questionExplanation" class="form-control" rows="3" placeholder="Explain why this is the answer..."></textarea>
+                    </div>
+
+                    <button id="saveQuestionBtn" class="save-btn">Save Question</button>
+                </div>
+
+                <div class="saved-questions">
+                    <h3>Saved Questions</h3>
+                    <div id="questionList" class="question-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
