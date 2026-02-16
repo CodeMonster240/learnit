@@ -224,10 +224,10 @@ class LearnItApp {
         const messages = [
             '🎉 Awesome! You got it!',
             '⭐ Excellent work!',
-            '🌟 You\'re a star!',
+            '🌟 You are a star!',
             '👏 Outstanding!',
             '🎊 Perfect answer!',
-            '💪 You\'re doing great!',
+            '💪 You are doing great!',
             '🚀 Amazing job!',
             '🏆 Fantastic!',
             '✨ Brilliant!'
@@ -255,13 +255,13 @@ class LearnItApp {
         message += `You got ${this.correctAnswers} out of ${this.questions.length} correct (${percentage}%).\n\n`;
         
         if (percentage === 100) {
-            message += '🏆 Perfect score! You\'re amazing!';
+            message += '🏆 Perfect score! You are amazing!';
         } else if (percentage >= 80) {
             message += '⭐ Excellent work! Keep it up!';
         } else if (percentage >= 60) {
             message += '👍 Good job! Practice makes perfect!';
         } else {
-            message += '💪 Keep learning! You\'re getting better!';
+            message += '💪 Keep learning! You are getting better!';
         }
 
         alert(message);
@@ -381,7 +381,7 @@ class LearnItApp {
                 question: 'What is 5 × 2?',
                 answer: '10',
                 hint: 'Think of 5 groups of 2, or 2 + 2 + 2 + 2 + 2',
-                explanation: '5 × 2 means 5 groups of 2. That\'s the same as 2 + 2 + 2 + 2 + 2 = 10',
+                explanation: '5 × 2 means 5 groups of 2. That is the same as 2 + 2 + 2 + 2 + 2 = 10',
                 visual: { numbers: [5, 2], operator: '×' }
             },
             {
